@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var containerSize: Double = 300.0
+    @State var containerSize: Double
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("Марафон").foregroundStyle(.gray) +
-                Text(" по") +
-                Text(" SwiftUI")
+                Text("Марафон ").foregroundStyle(.gray) + Text("по SwiftUI")
+                //Text("Марафон по SwiftUI")
                 
                 Text("«Отцовский Пинок»")
                     .bold()
                     .font(.title)
                     .foregroundStyle(.blue)
             }
-            .frame(width: CGFloat(containerSize), height: 200)
+            .frame(width: containerSize, height: 200)
             .border(.red)
             
             Slider(value: $containerSize, in: 100...300)
@@ -32,5 +31,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(containerSize: 300)
 }
