@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var containerSize: Double = 300.0
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            VStack(alignment: .leading) {
+                Text("Марафон").foregroundStyle(.gray) +
+                Text(" по") +
+                Text(" SwiftUI")
+                
+                Text("«Отцовский Пинок»")
+                    .bold()
+                    .font(.title)
+                    .foregroundStyle(.blue)
+            }
+            .frame(width: CGFloat(containerSize), height: 200)
+            .border(.red)
+            
+            Slider(value: $containerSize, in: 100...300)
         }
         .padding()
     }
