@@ -11,7 +11,7 @@ import SwiftUI
 struct Fathers_Help_2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(containerSize: 300)
+            ContentView()
         }
     }
 }
